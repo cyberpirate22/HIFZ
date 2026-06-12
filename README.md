@@ -1,82 +1,195 @@
-# Hifz Repeater — حِفْظ
+ <div align="center">
 
-A single-file web tool for Quran memorisation, built on the method used for fourteen centuries: hear the recitation from a teacher (**Talaqqi**), repeat each ayah until it settles (**Takrar**), then veil the page and recite from memory (**Hifz**).
+<img src="assets/banner.png" alt="Hifz Repeater — حِفْظ" width="100%">
 
-Everything — landing page and tool — lives in one HTML file with no build step, no dependencies to install, and no backend. Open it in any browser on any device.
+# Hifz Repeater
 
-## What it does
+**A single-file web tool for Quran memorisation — built on the method used for fourteen centuries.**
 
-You pick a surah and an ayah range (or the whole surah), choose a reciter and optionally an English translation, and load the passage. The exact Uthmani mushaf text renders on a parchment-styled page. From there:
+Hear it from a reciter · Repeat it until it settles · Veil the page and recite
 
-- **Listen on a loop.** The audio engine plays per-ayah recordings in two modes: *read through* (each ayah once, in order — the classic sabaq listening pattern) or *repeat each ayah* 3, 5, 7, or 10 times before advancing. An optional passage loop restarts the whole range when it ends. The ayah currently being recited is highlighted in gold.
-- **Veil the page.** One tap blurs the ink while the page stays in front of you. While veiled, tapping any single ayah peeks at just that one — the way a teacher lets a student glance at one word, never the whole page. Tap again to re-veil it.
-- **Read the meaning.** With a translation selected, the English appears beneath each ayah and is veiled along with the Arabic, so it can't quietly do your recall for you.
+<br>
 
-## Reciters
+![Single file](https://img.shields.io/badge/single_file-no_build_step-c8a14b?style=flat-square&labelColor=0c1e16)
+![Vanilla JS](https://img.shields.io/badge/vanilla_JS-zero_dependencies-c8a14b?style=flat-square&labelColor=0c1e16)
+![GSAP](https://img.shields.io/badge/motion-GSAP_+_ScrollTrigger-c8a14b?style=flat-square&labelColor=0c1e16)
+![API](https://img.shields.io/badge/text_&_audio-Quran.com_API-c8a14b?style=flat-square&labelColor=0c1e16)
+![Mobile](https://img.shields.io/badge/mobile-first-c8a14b?style=flat-square&labelColor=0c1e16)
 
-Audio comes from two sources, handled transparently by the tool.
+<br>
 
-**Classical / Teaching** (Quran.com per-ayah API)
-- Mahmoud Khalil al-Husary
-- Husary — Mu'allim (the slow teaching-pace recording made for tajweed students)
-- AbdulBaset AbdulSamad (Murattal)
-- Mohamed Siddiq al-Minshawi
+<img src="assets/hero.png" alt="Landing page — Al-Qamar 54:17 unveiling over a hand-drawn rub el hizb" width="92%">
 
-**Contemporary**
-- Mishari Rashid al-Afasy *(Quran.com)*
-- Saud ash-Shuraym *(Quran.com)*
-- Abdur-Rahman as-Sudais *(Quran.com)*
-- Maher al-Muaiqly *(EveryAyah CDN)*
-- Saad al-Ghamdi *(EveryAyah CDN)*
+</div>
 
-> Idris Abkar and Abdul Rashid Sufi are not included because no free source offers their recitations as verse-by-verse audio files — only full-surah recordings, which the per-ayah repeat engine cannot use. If a per-ayah source appears, adding a reciter is a one-line change (see below).
+<br>
 
-## Translations
+## ✦ The idea in one image
 
-- Saheeh International
-- M.A.S. Abdel Haleem
-- Al-Hilali & Khan
-- T. Usmani
+The page stays in front of you. The ink does not.
 
-Footnote markers are stripped automatically.
+<div align="center">
+<img src="assets/page-veiled.png" alt="Al-Fatihah veiled — only the first ayah peeked into focus" width="86%">
+</div>
 
-## How to use it
+One tap blurs every ayah so you can recite from memory. Stuck on a single verse? **Tap it to peek** — only that one sharpens, the way a teacher lets a student glance at one word, never the whole page. Tap again and the veil returns.
 
-1. Open `hifz.html` in a browser (double-click locally, or host it — see below).
-2. Scroll past the landing page or tap **Open the tool**.
-3. Choose a surah, set the ayah range — or tick **Whole surah**.
-4. Pick a reciter and (optionally) a translation, then **Load passage**.
-5. Press **Play**. Set the mode (read through / repeat ×N) and the **Loop the passage** toggle in the player bar.
-6. When the sound is familiar, press **Hide** and recite. Tap an ayah to peek if you get stuck.
+<br>
 
-A suggested session: load the passage → *read through + loop* a few cycles while following the text → switch to *repeat 5×* and recite along → **Hide** and recite from memory, peeking only where needed.
+## ✦ The method
 
-## Technical notes
+Nothing new. That is the point.
 
-- **Text:** Uthmani script from `api.quran.com/api/v4/quran/verses/uthmani` (one request per chapter).
-- **Audio:** per-ayah MP3s. Quran.com reciters resolve via the bulk endpoint `recitations/{id}/by_chapter/{n}?per_page=300` — a single request even for Al-Baqarah's 286 ayat (full surah with translation loads in ~1.3 s). EveryAyah reciters need no lookup at all; URLs follow the pattern `everyayah.com/data/{folder}/{SSS}{AAA}.mp3`.
-- **Translations:** `quran/translations/{id}?chapter_number={n}`, indexed by ayah number.
-- **Adding a reciter:** add one `<option>` to the reciter select. Value `q:{recitation_id}` for Quran.com, or `e:{folder_name}` for an EveryAyah folder.
-- **Frontend:** vanilla JS, GSAP + ScrollTrigger (cdnjs) for the landing animations. The landing motion fully respects `prefers-reduced-motion` and the page works with JavaScript animation disabled. Fonts: Amiri Quran (Arabic), Fraunces and Figtree (Latin), via Google Fonts.
-- **Broken audio handling:** if a single MP3 fails to load mid-session, the player skips to the next ayah instead of stalling.
+```mermaid
+flowchart LR
+    A["تَلَقِّي<br><b>Talaqqi</b><br>receive it from a reciter"] --> B["تَكْرَار<br><b>Takrar</b><br>repeat each ayah until it holds"]
+    B --> C["حِفْظ<br><b>Hifz</b><br>veil the page and recite"]
+    C -.->|the passage loops| A
+    style A fill:#12291e,stroke:#c8a14b,color:#f3ead3
+    style B fill:#12291e,stroke:#c8a14b,color:#f3ead3
+    style C fill:#12291e,stroke:#c8a14b,color:#f3ead3
+```
 
-## Hosting
+| | Mode | What it does |
+|---|---|---|
+| 🎧 | **Read through** | Plays the passage ayah by ayah, start to finish — the classic *sabaq* listening pass |
+| 🔁 | **Repeat ×3 / ×5 / ×7 / ×10** | Drills one ayah on a loop before advancing to the next |
+| ♾ | **Loop the passage** | Restarts the whole range when it ends — combine with either mode |
+| 👆 | **Veil & peek** | Blur everything; reveal one ayah at a time, on your terms |
 
-It's one file. Any static host works:
+<br>
 
-- **GitHub Pages:** push `hifz.html` to a repo, enable Pages, done.
-- **Netlify / Vercel / Cloudflare Pages:** drag and drop.
-- **Locally:** just open the file. (An internet connection is still required — text and audio are fetched live.)
+## ✦ The page itself
 
-Tip: rename it `index.html` if you want it served at the root of a domain.
+Exact **Uthmani mushaf script**, served live from the Quran.com API, set in a Quranic typeface on a parchment page — with the ayah currently being recited highlighted in gold.
 
-## Known limitations
+<div align="center">
+<table>
+<tr>
+<td align="center" width="50%">
+<img src="assets/page-arabic.png" alt="Flowing mushaf layout, Arabic only"><br>
+<sub><b>Arabic only</b> — flowing mushaf layout</sub>
+</td>
+<td align="center" width="50%">
+<img src="assets/page-translation.png" alt="Verse-by-verse layout with English translation beneath each ayah"><br>
+<sub><b>With translation</b> — veiled along with the Arabic</sub>
+</td>
+</tr>
+</table>
+</div>
 
-- **Online only.** Nothing is cached; every load fetches live. An offline mode (Service Worker caching the passage you're working on) is the most natural next feature.
-- **First play needs a tap.** Mobile browsers block autoplay; the first Play press must be a user gesture. The tool surfaces a clear message if this happens.
-- **No progress tracking.** The tool deliberately holds no state between sessions — your memorisation log stays with you and your teacher.
+<br>
 
-## Credits
+## ✦ Built for the phone in your hand
 
-- Quranic text and recitations served live by [Quran.com](https://quran.com) (QuranFoundation API) and [EveryAyah.com](https://everyayah.com).
-- Built as a study aid — your teacher remains your teacher.
+Memorisation happens before Fajr, on commutes, between things — so the whole experience is mobile-first: stacked controls, thumb-sized targets, a sticky player that follows you down the page.
+
+<div align="center">
+<table>
+<tr>
+<td align="center"><img src="assets/mobile-hero.png" alt="Mobile landing" width="260"></td>
+<td align="center"><img src="assets/mobile-tool.png" alt="Mobile tool with passage loaded" width="260"></td>
+</tr>
+</table>
+</div>
+
+<br>
+
+## ✦ Nine reciters, four translations
+
+| Classical / Teaching | Source | Contemporary | Source |
+|---|---|---|---|
+| Mahmoud Khalil al-Husary | Quran.com | Mishari Rashid al-Afasy | Quran.com |
+| Husary — **Mu'allim** *(teaching pace)* | Quran.com | Saud ash-Shuraym | Quran.com |
+| AbdulBaset AbdulSamad (Murattal) | Quran.com | Abdur-Rahman as-Sudais | Quran.com |
+| Mohamed Siddiq al-Minshawi | Quran.com | Maher al-Muaiqly | EveryAyah |
+| | | Saad al-Ghamdi | EveryAyah |
+
+**Translations:** Saheeh International · M.A.S. Abdel Haleem · Al-Hilali & Khan · T. Usmani — shown beneath each ayah and veiled with it, so the English can't quietly do your recall for you.
+
+> **Why no Idris Abkar or Abdul Rashid Sufi?** No free source offers their recitations as verse-by-verse audio — only full-surah files, which the per-ayah repeat engine cannot drill. If a per-ayah source appears, adding them is a one-line change (see below).
+
+<br>
+
+## ✦ Quick start
+
+```
+1. Open hifz.html in any browser          (double-click, or host it anywhere)
+2. Tap "Open the tool"
+3. Pick a surah · set the ayah range · or tick ☑ Whole surah
+4. Choose a reciter and (optionally) a translation → Load passage
+5. Press ▶ Play — set the mode and loop in the player bar
+6. When the sound is familiar: Hide → recite → peek only where stuck
+```
+
+**A suggested session:** *read through + loop* a few cycles while following the text → switch to *repeat ×5* and recite along → **Hide** and recite from memory.
+
+<br>
+
+## ✦ How it works
+
+```mermaid
+flowchart TB
+    subgraph file["hifz.html — one file, no build"]
+        L["Landing<br><i>GSAP unveiling, rub el hizb line-work</i>"]
+        T["Tool<br><i>vanilla JS, single &lt;audio&gt; element</i>"]
+    end
+    T -->|"1 request / chapter"| TXT["Quran.com<br>Uthmani text"]
+    T -->|"1 request / chapter"| TR["Quran.com<br>translations"]
+    T -->|"1 bulk request / chapter"| AQ["Quran.com<br>per-ayah audio"]
+    T -->|"constructed URLs, zero lookups"| AE["EveryAyah CDN<br>per-ayah audio"]
+    style file fill:#0c1e16,stroke:#c8a14b,color:#f3ead3
+    style TXT fill:#12291e,stroke:#87a093,color:#e9f0ea
+    style TR fill:#12291e,stroke:#87a093,color:#e9f0ea
+    style AQ fill:#12291e,stroke:#87a093,color:#e9f0ea
+    style AE fill:#12291e,stroke:#87a093,color:#e9f0ea
+```
+
+- **Bulk audio resolution.** Quran.com reciters resolve through `recitations/{id}/by_chapter/{n}?per_page=300` — one request even for Al-Baqarah. Measured result: **all 286 ayat, with translation, loaded in 1.3 s**.
+- **EveryAyah needs no lookup at all** — URLs follow `everyayah.com/data/{folder}/{SSS}{AAA}.mp3`.
+- **Resilient playback.** A broken MP3 mid-session skips to the next ayah instead of stalling.
+- **Adding a reciter is one line** — a new `<option>` in the reciter select:
+
+```html
+<option value="q:6">…</option>                      <!-- q:{recitation_id}  → Quran.com -->
+<option value="e:Ghamadi_40kbps">…</option>          <!-- e:{folder_name}    → EveryAyah -->
+```
+
+- **Motion that knows when to stop.** GSAP + ScrollTrigger drive the landing's blur-to-sharp "unveiling" language; `prefers-reduced-motion` disables all of it and the page remains fully usable.
+- **Fonts:** Amiri Quran (Arabic) · Fraunces + Figtree (Latin), via Google Fonts.
+
+<br>
+
+## ✦ Hosting
+
+It is one file. Any static host works.
+
+| Host | How |
+|---|---|
+| **GitHub Pages** | Push, enable Pages, done |
+| **Netlify / Vercel / Cloudflare** | Drag and drop |
+| **Locally** | Just open the file *(internet still required — text and audio are fetched live)* |
+
+Rename to `index.html` to serve it at the root of a domain.
+
+<br>
+
+## ✦ Known limitations & roadmap
+
+- **Online only.** Nothing is cached. A Service Worker that caches *the passage you're working on* for offline pre-Fajr sessions is the natural next feature.
+- **First play needs a tap** — mobile browsers block autoplay; the tool surfaces a clear message when it happens.
+- **No progress tracking — by design.** The tool holds no state between sessions. Your memorisation log stays with you and your teacher.
+
+<br>
+
+---
+
+<div align="center">
+
+Quranic text and recitations served live by **[Quran.com](https://quran.com)** and **[EveryAyah.com](https://everyayah.com)**
+
+*Built as a study aid — your teacher remains your teacher.*
+
+<sub>﴿ فَلَقَدْ يَسَّرْنَا الْقُرْآنَ لِلذِّكْرِ فَهَلْ مِن مُّدَّكِرٍ ﴾</sub>
+
+</div>
