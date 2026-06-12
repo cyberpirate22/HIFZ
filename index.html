@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -35,258 +36,260 @@
   }
   ::selection{background:var(--gold);color:var(--night)}
 
-  .eyebrow{
-    font-size:.72rem;letter-spacing:.34em;text-transform:uppercase;
-    color:var(--gold);font-weight:500;
-  }
-  .ar{font-family:'Amiri Quran','Scheherazade New',serif}
+.eyebrow{
+font-size:.72rem;letter-spacing:.34em;text-transform:uppercase;
+color:var(–gold);font-weight:500;
+}
+.ar{font-family:‘Amiri Quran’,‘Scheherazade New’,serif}
 
-  a.btn,button.btn{
-    display:inline-block;text-decoration:none;cursor:pointer;
-    border-radius:10px;padding:14px 26px;min-height:48px;
-    font-family:'Figtree',sans-serif;font-weight:600;font-size:.95rem;
-    transition:transform .12s ease,box-shadow .25s ease,opacity .15s ease;
-    border:none;
-  }
-  .btn:active{transform:scale(.97)}
-  .btn:disabled{opacity:.45;cursor:not-allowed}
-  .btn-gold{
-    background:linear-gradient(150deg,var(--gold-bright),var(--gold));
-    color:#231a07;box-shadow:0 8px 30px -10px rgba(200,161,75,.55);
-  }
-  .btn-gold:hover{box-shadow:0 12px 36px -8px rgba(200,161,75,.7)}
-  .btn-ghost{background:transparent;color:var(--gold);border:1px solid #6a5527}
-  .btn-ghost:hover{border-color:var(--gold)}
-  :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
+a.btn,button.btn{
+display:inline-block;text-decoration:none;cursor:pointer;
+border-radius:10px;padding:14px 26px;min-height:48px;
+font-family:‘Figtree’,sans-serif;font-weight:600;font-size:.95rem;
+transition:transform .12s ease,box-shadow .25s ease,opacity .15s ease;
+border:none;
+}
+.btn:active{transform:scale(.97)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn-gold{
+background:linear-gradient(150deg,var(–gold-bright),var(–gold));
+color:#231a07;box-shadow:0 8px 30px -10px rgba(200,161,75,.55);
+}
+.btn-gold:hover{box-shadow:0 12px 36px -8px rgba(200,161,75,.7)}
+.btn-ghost{background:transparent;color:var(–gold);border:1px solid #6a5527}
+.btn-ghost:hover{border-color:var(–gold)}
+:focus-visible{outline:2px solid var(–gold);outline-offset:3px;border-radius:6px}
 
-  /* ============ HERO ============ */
-  .hero{
-    position:relative;min-height:100svh;overflow:hidden;
-    display:flex;flex-direction:column;align-items:center;justify-content:center;
-    text-align:center;padding:90px 22px 70px;
-    background:
-      radial-gradient(ellipse 90% 55% at 50% -8%, rgba(27,58,42,.55) 0%, transparent 65%),
-      radial-gradient(ellipse 60% 40% at 50% 115%, rgba(200,161,75,.07) 0%, transparent 70%);
-  }
-  .star-wrap{
-    position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-    pointer-events:none;z-index:0;
-  }
-  .star-wrap svg{width:min(82vw,560px);height:auto;opacity:.5;overflow:visible}
-  .star-wrap path,.star-wrap circle{
-    fill:none;stroke:var(--gold);stroke-width:.7;vector-effect:non-scaling-stroke;
-  }
-  .hero-inner{position:relative;z-index:1;max-width:780px}
-  .hero .eyebrow{display:block;margin-bottom:34px}
-  .hero .eyebrow .ar{font-size:1.05rem;letter-spacing:0;margin-left:.5em;color:var(--gold-bright)}
+/* ============ HERO ============ */
+.hero{
+position:relative;min-height:100svh;overflow:hidden;
+display:flex;flex-direction:column;align-items:center;justify-content:center;
+text-align:center;padding:90px 22px 70px;
+background:
+radial-gradient(ellipse 90% 55% at 50% -8%, rgba(27,58,42,.55) 0%, transparent 65%),
+radial-gradient(ellipse 60% 40% at 50% 115%, rgba(200,161,75,.07) 0%, transparent 70%);
+}
+.star-wrap{
+position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+pointer-events:none;z-index:0;
+}
+.star-wrap svg{width:min(82vw,560px);height:auto;opacity:.5;overflow:visible}
+.star-wrap path,.star-wrap circle{
+fill:none;stroke:var(–gold);stroke-width:.7;vector-effect:non-scaling-stroke;
+}
+.hero-inner{position:relative;z-index:1;max-width:780px}
+.hero .eyebrow{display:block;margin-bottom:34px}
+.hero .eyebrow .ar{font-size:1.05rem;letter-spacing:0;margin-left:.5em;color:var(–gold-bright)}
 
-  .hero-ayah{
-    display:inline-block;cursor:pointer;border:none;background:none;
-    color:var(--parchment);
-    font-size:clamp(1.7rem,5.6vw,3.1rem);
-    line-height:2.05;direction:rtl;
-    transition:filter .9s cubic-bezier(.22,.8,.3,1);
-    will-change:filter;padding:4px 10px;
-  }
-  .hero-ayah .end{color:var(--gold);font-size:.62em;margin-right:.35em}
-  .hero-ayah.veiled{filter:blur(12px)}
-  .rendering{
-    margin-top:22px;color:var(--dim);
-    font-family:'Fraunces',serif;font-style:italic;font-weight:300;
-    font-size:clamp(.98rem,2.4vw,1.18rem);line-height:1.6;
-    max-width:46ch;margin-left:auto;margin-right:auto;
-  }
-  .rendering cite{font-style:normal;font-size:.78em;color:var(--gold);letter-spacing:.12em;display:block;margin-top:8px}
-  .tap-hint{margin-top:30px;font-size:.78rem;letter-spacing:.08em;color:var(--dim)}
-  .tap-hint b{color:var(--gold-bright);font-weight:500}
-  .hero-ctas{margin-top:36px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-  .scroll-cue{
-    position:absolute;bottom:26px;left:50%;transform:translateX(-50%);
-    color:var(--gold);font-size:1.3rem;opacity:.7;z-index:1;text-decoration:none;
-  }
+.hero-ayah{
+display:inline-block;cursor:pointer;border:none;background:none;
+color:var(–parchment);
+font-size:clamp(1.7rem,5.6vw,3.1rem);
+line-height:2.05;direction:rtl;
+transition:filter .9s cubic-bezier(.22,.8,.3,1);
+will-change:filter;padding:4px 10px;
+}
+.hero-ayah .end{color:var(–gold);font-size:.62em;margin-right:.35em}
+.hero-ayah.veiled{filter:blur(12px)}
+.rendering{
+margin-top:22px;color:var(–dim);
+font-family:‘Fraunces’,serif;font-style:italic;font-weight:300;
+font-size:clamp(.98rem,2.4vw,1.18rem);line-height:1.6;
+max-width:46ch;margin-left:auto;margin-right:auto;
+}
+.rendering cite{font-style:normal;font-size:.78em;color:var(–gold);letter-spacing:.12em;display:block;margin-top:8px}
+.tap-hint{margin-top:30px;font-size:.78rem;letter-spacing:.08em;color:var(–dim)}
+.tap-hint b{color:var(–gold-bright);font-weight:500}
+.hero-ctas{margin-top:36px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.scroll-cue{
+position:absolute;bottom:26px;left:50%;transform:translateX(-50%);
+color:var(–gold);font-size:1.3rem;opacity:.7;z-index:1;text-decoration:none;
+}
 
-  /* ============ LANDING SECTIONS ============ */
-  .land-sec{padding:110px 22px}
-  .inner{max-width:var(--max);margin:0 auto}
-  .sec-head{margin-bottom:64px;max-width:560px}
-  .sec-head h2{
-    font-family:'Fraunces',serif;font-weight:400;
-    font-size:clamp(1.7rem,4.5vw,2.5rem);line-height:1.2;
-    color:var(--parchment);margin-top:16px;
-  }
-  .sec-head p{margin-top:16px;color:var(--dim);line-height:1.65;font-size:1rem}
+/* ============ LANDING SECTIONS ============ */
+.land-sec{padding:110px 22px}
+.inner{max-width:var(–max);margin:0 auto}
+.sec-head{margin-bottom:64px;max-width:560px}
+.sec-head h2{
+font-family:‘Fraunces’,serif;font-weight:400;
+font-size:clamp(1.7rem,4.5vw,2.5rem);line-height:1.2;
+color:var(–parchment);margin-top:16px;
+}
+.sec-head p{margin-top:16px;color:var(–dim);line-height:1.65;font-size:1rem}
 
-  .method{background:linear-gradient(180deg,transparent, rgba(16,36,25,.5) 18%, rgba(16,36,25,.5) 82%, transparent)}
-  .steps{display:flex;flex-direction:column}
-  .step{
-    display:grid;grid-template-columns:120px 1fr;gap:26px;
-    padding:42px 0;border-top:1px solid rgba(200,161,75,.22);
-    align-items:start;
-  }
-  .step:last-child{border-bottom:1px solid rgba(200,161,75,.22)}
-  .step .term{text-align:center}
-  .step .term .arb{display:block;font-family:'Amiri Quran','Scheherazade New',serif;font-size:2.2rem;color:var(--gold-bright);line-height:1.4}
-  .step .term .lat{display:block;font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);margin-top:6px}
-  .step h3{font-family:'Fraunces',serif;font-weight:400;font-size:1.35rem;color:var(--parchment)}
-  .step p{margin-top:10px;color:var(--dim);line-height:1.65;max-width:54ch}
+.method{background:linear-gradient(180deg,transparent, rgba(16,36,25,.5) 18%, rgba(16,36,25,.5) 82%, transparent)}
+.steps{display:flex;flex-direction:column}
+.step{
+display:grid;grid-template-columns:120px 1fr;gap:26px;
+padding:42px 0;border-top:1px solid rgba(200,161,75,.22);
+align-items:start;
+}
+.step:last-child{border-bottom:1px solid rgba(200,161,75,.22)}
+.step .term{text-align:center}
+.step .term .arb{display:block;font-family:‘Amiri Quran’,‘Scheherazade New’,serif;font-size:2.2rem;color:var(–gold-bright);line-height:1.4}
+.step .term .lat{display:block;font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;color:var(–gold);margin-top:6px}
+.step h3{font-family:‘Fraunces’,serif;font-weight:400;font-size:1.35rem;color:var(–parchment)}
+.step p{margin-top:10px;color:var(–dim);line-height:1.65;max-width:54ch}
 
-  .loop-band{text-align:center}
-  .pips{display:flex;gap:18px;justify-content:center;margin:46px 0 26px}
-  .pip{width:14px;height:14px;border-radius:50%;border:1px solid var(--gold);background:transparent}
-  .pip.lit{background:var(--gold);box-shadow:0 0 18px rgba(200,161,75,.6)}
-  .loop-caption{color:var(--dim);font-size:.92rem;letter-spacing:.04em}
-  .loop-caption .ar{color:var(--gold-bright);font-size:1.3rem;margin:0 .35em}
-  .loop-counts{
-    margin-top:38px;display:flex;gap:30px;justify-content:center;flex-wrap:wrap;
-    font-family:'Fraunces',serif;color:var(--parchment);
-  }
-  .loop-counts span{font-size:1.5rem}
-  .loop-counts span em{font-style:normal;color:var(--gold);font-size:.85rem;vertical-align:super}
+.loop-band{text-align:center}
+.pips{display:flex;gap:18px;justify-content:center;margin:46px 0 26px}
+.pip{width:14px;height:14px;border-radius:50%;border:1px solid var(–gold);background:transparent}
+.pip.lit{background:var(–gold);box-shadow:0 0 18px rgba(200,161,75,.6)}
+.loop-caption{color:var(–dim);font-size:.92rem;letter-spacing:.04em}
+.loop-caption .ar{color:var(–gold-bright);font-size:1.3rem;margin:0 .35em}
+.loop-counts{
+margin-top:38px;display:flex;gap:30px;justify-content:center;flex-wrap:wrap;
+font-family:‘Fraunces’,serif;color:var(–parchment);
+}
+.loop-counts span{font-size:1.5rem}
+.loop-counts span em{font-style:normal;color:var(–gold);font-size:.85rem;vertical-align:super}
 
-  .details dl{display:grid;grid-template-columns:1fr 1fr;gap:0 56px}
-  .details .pair{padding:26px 0;border-top:1px solid rgba(135,160,147,.18)}
-  .details dt{font-family:'Fraunces',serif;font-size:1.12rem;color:var(--parchment);font-weight:400}
-  .details dd{margin-top:8px;color:var(--dim);line-height:1.6;font-size:.93rem}
+.details dl{display:grid;grid-template-columns:1fr 1fr;gap:0 56px}
+.details .pair{padding:26px 0;border-top:1px solid rgba(135,160,147,.18)}
+.details dt{font-family:‘Fraunces’,serif;font-size:1.12rem;color:var(–parchment);font-weight:400}
+.details dd{margin-top:8px;color:var(–dim);line-height:1.6;font-size:.93rem}
 
-  [data-unveil]{will-change:filter,transform,opacity}
+[data-unveil]{will-change:filter,transform,opacity}
 
-  /* ============ THE TOOL ============ */
-  .tool-sec{padding:110px 22px 60px}
-  .tool-head{text-align:center;margin-bottom:46px}
-  .tool-head .arb{
-    font-family:'Amiri Quran','Scheherazade New',serif;
-    font-size:2.4rem;color:var(--gold);line-height:1.2;
-  }
-  .tool-head .sub{
-    font-size:.74rem;letter-spacing:.3em;text-transform:uppercase;
-    color:var(--dim);margin-top:4px;
-  }
-  .tool-rule{
-    width:120px;height:1px;margin:16px auto 0;border:0;
-    background:linear-gradient(90deg,transparent,var(--gold),transparent);
-  }
-  .tool-wrap{max-width:760px;margin:0 auto}
+/* ============ THE TOOL ============ */
+.tool-sec{padding:110px 22px 60px}
+.tool-head{text-align:center;margin-bottom:46px}
+.tool-head .arb{
+font-family:‘Amiri Quran’,‘Scheherazade New’,serif;
+font-size:2.4rem;color:var(–gold);line-height:1.2;
+}
+.tool-head .sub{
+font-size:.74rem;letter-spacing:.3em;text-transform:uppercase;
+color:var(–dim);margin-top:4px;
+}
+.tool-rule{
+width:120px;height:1px;margin:16px auto 0;border:0;
+background:linear-gradient(90deg,transparent,var(–gold),transparent);
+}
+.tool-wrap{max-width:760px;margin:0 auto}
 
-  .controls{
-    background:var(--panel);border:1px solid var(--panel-edge);
-    border-radius:var(--radius);padding:16px;margin-bottom:20px;
-  }
-  .row{display:flex;gap:10px;flex-wrap:wrap}
-  .field{flex:1;min-width:130px}
-  .field.small{flex:0 1 100px;min-width:90px}
-  .controls label{
-    display:block;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;
-    color:var(--dim);margin-bottom:6px;
-  }
-  select,input[type=number]{
-    width:100%;padding:10px 12px;border-radius:9px;
-    background:var(--night);border:1px solid var(--panel-edge);
-    color:#e9f0ea;font-family:inherit;font-size:.95rem;
-    appearance:none;-webkit-appearance:none;
-  }
-  .load-row{margin-top:12px;display:flex;gap:10px;align-items:center}
-  .status{font-size:.82rem;color:var(--dim);flex:1;text-align:right}
+.controls{
+background:var(–panel);border:1px solid var(–panel-edge);
+border-radius:var(–radius);padding:16px;margin-bottom:20px;
+}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.field{flex:1;min-width:130px}
+.field.small{flex:0 1 100px;min-width:90px}
+.controls label{
+display:block;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;
+color:var(–dim);margin-bottom:6px;
+}
+select,input[type=number]{
+width:100%;padding:10px 12px;border-radius:9px;
+background:var(–night);border:1px solid var(–panel-edge);
+color:#e9f0ea;font-family:inherit;font-size:.95rem;
+appearance:none;-webkit-appearance:none;
+}
+.load-row{margin-top:12px;display:flex;gap:10px;align-items:center}
+.status{font-size:.82rem;color:var(–dim);flex:1;text-align:right}
 
-  .page{
-    position:relative;background:var(--parchment);
-    border-radius:var(--radius);
-    padding:30px 24px 26px;
-    box-shadow:0 18px 50px -18px rgba(0,0,0,.65);
-    display:none;
-  }
-  .page.visible{display:block}
-  .page::before{
-    content:"";position:absolute;inset:9px;border:1px solid var(--gold);
-    border-radius:9px;pointer-events:none;opacity:.55;
-  }
-  .page-head{
-    text-align:center;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;
-    color:var(--gold-soft);margin-bottom:18px;
-  }
-  .verses{direction:rtl;text-align:center}
-  .verse{
-    font-family:'Amiri Quran','Scheherazade New',serif;
-    font-size:1.9rem;line-height:2.4;color:var(--ink);
-    display:inline;cursor:pointer;border-radius:6px;
-    transition:filter .45s ease,background .3s ease;
-    padding:2px 4px;
-  }
-  .verse .marker{
-    font-size:1.2rem;color:var(--gold-soft);margin:0 6px;
-    font-family:'Scheherazade New',serif;
-  }
-  .verse.now-playing{background:rgba(200,161,75,.22)}
-  .verses.with-trans{direction:ltr;text-align:right}
-  .verses.with-trans .verse{
-    display:block;margin-bottom:18px;padding:10px 12px;
-    direction:rtl;text-align:right;line-height:2.2;
-  }
-  .verses.with-trans .trans{
-    display:block;direction:ltr;text-align:left;
-    font-family:'Figtree',sans-serif;font-style:italic;
-    font-size:.92rem;line-height:1.55;color:var(--trans-ink);
-    margin-top:8px;padding-top:8px;
-    border-top:1px solid rgba(154,124,57,.3);
-    transition:filter .45s ease;
-  }
-  .page.veiled .verse{filter:blur(9px);user-select:none}
-  .page.veiled .verse.peek{filter:blur(0)}
-  .veil-hint{
-    display:none;text-align:center;margin-top:16px;
-    font-size:.78rem;color:var(--gold-soft);letter-spacing:.04em;
-  }
-  .page.veiled .veil-hint{display:block}
+.page{
+position:relative;background:var(–parchment);
+border-radius:var(–radius);
+padding:30px 24px 26px;
+box-shadow:0 18px 50px -18px rgba(0,0,0,.65);
+display:none;
+}
+.page.visible{display:block}
+.page::before{
+content:””;position:absolute;inset:9px;border:1px solid var(–gold);
+border-radius:9px;pointer-events:none;opacity:.55;
+}
+.page-head{
+text-align:center;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;
+color:var(–gold-soft);margin-bottom:18px;
+}
+.verses{direction:rtl;text-align:center}
+.verse{
+font-family:‘Amiri Quran’,‘Scheherazade New’,serif;
+font-size:1.9rem;line-height:2.4;color:var(–ink);
+display:inline;cursor:pointer;border-radius:6px;
+transition:filter .45s ease,background .3s ease;
+padding:2px 4px;
+}
+.verse .marker{
+font-size:1.2rem;color:var(–gold-soft);margin:0 6px;
+font-family:‘Scheherazade New’,serif;
+}
+.verse.now-playing{background:rgba(200,161,75,.22)}
+.verses.with-trans{direction:ltr;text-align:right}
+.verses.with-trans .verse{
+display:block;margin-bottom:18px;padding:10px 12px;
+direction:rtl;text-align:right;line-height:2.2;
+}
+.verses.with-trans .trans{
+display:block;direction:ltr;text-align:left;
+font-family:‘Figtree’,sans-serif;font-style:italic;
+font-size:.92rem;line-height:1.55;color:var(–trans-ink);
+margin-top:8px;padding-top:8px;
+border-top:1px solid rgba(154,124,57,.3);
+transition:filter .45s ease;
+}
+.page.veiled .verse{filter:blur(9px);user-select:none}
+.page.veiled .verse.peek{filter:blur(0)}
+.veil-hint{
+display:none;text-align:center;margin-top:16px;
+font-size:.78rem;color:var(–gold-soft);letter-spacing:.04em;
+}
+.page.veiled .veil-hint{display:block}
 
-  .player{
-    display:none;position:sticky;bottom:14px;margin-top:20px;z-index:5;
-    background:var(--panel);border:1px solid var(--panel-edge);
-    border-radius:var(--radius);padding:13px 16px;
-    box-shadow:0 10px 30px -10px rgba(0,0,0,.7);
-  }
-  .player.visible{display:block}
-  .player-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-  .now{font-size:.8rem;color:var(--dim);flex:1;min-width:130px}
-  .now strong{color:var(--gold);font-weight:600}
-  .mini-field{display:flex;align-items:center;gap:6px}
-  .mini-field label{margin:0;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
-  .mini-field select{width:auto;padding:7px 9px;font-size:.82rem}
-  .toggle{
-    display:flex;align-items:center;gap:7px;cursor:pointer;
-    font-size:.78rem;color:var(--dim);user-select:none;
-  }
-  .toggle input{accent-color:var(--gold);width:15px;height:15px;cursor:pointer}
+.player{
+display:none;position:sticky;bottom:14px;margin-top:20px;z-index:5;
+background:var(–panel);border:1px solid var(–panel-edge);
+border-radius:var(–radius);padding:13px 16px;
+box-shadow:0 10px 30px -10px rgba(0,0,0,.7);
+}
+.player.visible{display:block}
+.player-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.now{font-size:.8rem;color:var(–dim);flex:1;min-width:130px}
+.now strong{color:var(–gold);font-weight:600}
+.mini-field{display:flex;align-items:center;gap:6px}
+.mini-field label{margin:0;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(–dim)}
+.mini-field select{width:auto;padding:7px 9px;font-size:.82rem}
+.toggle{
+display:flex;align-items:center;gap:7px;cursor:pointer;
+font-size:.78rem;color:var(–dim);user-select:none;
+}
+.toggle input{accent-color:var(–gold);width:15px;height:15px;cursor:pointer}
 
-  .err{
-    display:none;margin-top:14px;padding:12px 14px;border-radius:9px;
-    background:#3a1d1d;border:1px solid #6b3030;color:#f0c9c9;font-size:.85rem;
-  }
-  .err.visible{display:block}
+.err{
+display:none;margin-top:14px;padding:12px 14px;border-radius:9px;
+background:#3a1d1d;border:1px solid #6b3030;color:#f0c9c9;font-size:.85rem;
+}
+.err.visible{display:block}
 
-  footer{
-    text-align:center;padding:40px 22px 56px;color:#5d7468;font-size:.78rem;line-height:1.7;
-  }
+footer{
+text-align:center;padding:40px 22px 56px;color:#5d7468;font-size:.78rem;line-height:1.7;
+}
 
-  @media (max-width:640px){
-    .land-sec{padding:84px 20px}
-    .tool-sec{padding:84px 16px 50px}
-    .step{grid-template-columns:1fr;gap:14px;padding:34px 0}
-    .step .term{text-align:left;display:flex;align-items:baseline;gap:14px}
-    .step .term .lat{margin-top:0}
-    .details dl{grid-template-columns:1fr}
-    .hero{padding-top:70px}
-    .hero-ctas{flex-direction:column;align-items:stretch;max-width:320px;margin-left:auto;margin-right:auto}
-    .hero-ctas .btn{text-align:center}
-    .verse{font-size:1.55rem;line-height:2.3}
-  }
-  @media (prefers-reduced-motion:reduce){
-    html{scroll-behavior:auto}
-    *{transition:none !important;animation:none !important}
-  }
+@media (max-width:640px){
+.land-sec{padding:84px 20px}
+.tool-sec{padding:84px 16px 50px}
+.step{grid-template-columns:1fr;gap:14px;padding:34px 0}
+.step .term{text-align:left;display:flex;align-items:baseline;gap:14px}
+.step .term .lat{margin-top:0}
+.details dl{grid-template-columns:1fr}
+.hero{padding-top:70px}
+.hero-ctas{flex-direction:column;align-items:stretch;max-width:320px;margin-left:auto;margin-right:auto}
+.hero-ctas .btn{text-align:center}
+.verse{font-size:1.55rem;line-height:2.3}
+}
+@media (prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}
+*{transition:none !important;animation:none !important}
+}
 </style>
+
 </head>
 <body>
 
 <!-- ================= HERO ================= -->
+
 <header class="hero">
   <div class="star-wrap" aria-hidden="true">
     <svg id="star" viewBox="0 0 200 200">
@@ -299,28 +302,33 @@
   <div class="hero-inner">
     <span class="eyebrow" data-load>Hifz Repeater <span class="ar">· حِفْظ</span></span>
 
-    <button class="hero-ayah veiled ar" id="heroAyah" data-load
-            aria-label="Quran 54:17 — tap to veil or unveil the verse">
-      فَلَقَدۡ يَسَّرۡنَا ٱلۡقُرۡءَانَ لِلذِّكۡرِ فَهَلۡ مِن مُّدَّكِرٖ<span class="end">﴿١٧﴾</span>
-    </button>
+```
+<button class="hero-ayah veiled ar" id="heroAyah" data-load
+        aria-label="Quran 54:17 — tap to veil or unveil the verse">
+  فَلَقَدۡ يَسَّرۡنَا ٱلۡقُرۡءَانَ لِلذِّكۡرِ فَهَلۡ مِن مُّدَّكِرٖ<span class="end">﴿١٧﴾</span>
+</button>
 
-    <p class="rendering" data-load>
-      We made the Quran easy to remember — so will anyone take heed?
-      <cite>AL-QAMAR · 54:17</cite>
-    </p>
+<p class="rendering" data-load>
+  We made the Quran easy to remember — so will anyone take heed?
+  <cite>AL-QAMAR · 54:17</cite>
+</p>
 
-    <p class="tap-hint" data-load><b>Tap the verse.</b> That veil is the whole idea.</p>
+<p class="tap-hint" data-load><b>Tap the verse.</b> That veil is the whole idea.</p>
 
-    <div class="hero-ctas" data-load>
-      <a class="btn btn-gold" href="#tool">Open the tool</a>
-      <a class="btn btn-ghost" href="#method">See the method</a>
-    </div>
+<div class="hero-ctas" data-load>
+  <a class="btn btn-gold" href="#tool">Open the Quran</a>
+  <a class="btn btn-ghost" href="#method">See the method</a>
+</div>
+```
+
   </div>
 
-  <a class="scroll-cue" href="#method" aria-label="Scroll to the method" id="cue">▾</a>
+<a class="scroll-cue" href="#method" aria-label="Scroll to the method" id="cue">▾</a>
+
 </header>
 
 <!-- ================= METHOD ================= -->
+
 <section class="land-sec method" id="method">
   <div class="inner">
     <div class="sec-head" data-unveil>
@@ -329,33 +337,37 @@
       <p>For fourteen centuries the Quran has been memorised the same way: hear it from a reciter, repeat it until it settles, then recite it back unseen. This tool only removes the friction.</p>
     </div>
 
-    <div class="steps">
-      <div class="step" data-unveil>
-        <div class="term"><span class="arb">تَلَقِّي</span><span class="lat">Talaqqi</span></div>
-        <div>
-          <h3>Receive it from a reciter</h3>
-          <p>Choose from nine recitations — classical voices like Husary's Mu'allim teaching recording, or contemporary ones like Maher al-Muaiqly — and let the correct sound become the memory itself.</p>
-        </div>
-      </div>
-      <div class="step" data-unveil>
-        <div class="term"><span class="arb">تَكْرَار</span><span class="lat">Takrar</span></div>
-        <div>
-          <h3>Repeat each ayah until it holds</h3>
-          <p>The loop engine plays one ayah three, five, seven or ten times before moving to the next — then cycles the whole passage again. The old counting method, counted for you.</p>
-        </div>
-      </div>
-      <div class="step" data-unveil>
-        <div class="term"><span class="arb">حِفْظ</span><span class="lat">Hifz</span></div>
-        <div>
-          <h3>Veil the page and recite</h3>
-          <p>One tap blurs the ink while the page stays in front of you. Stuck on a single ayah? Tap it to peek — the way a teacher lets you glance at one word, never the whole page.</p>
-        </div>
-      </div>
+```
+<div class="steps">
+  <div class="step" data-unveil>
+    <div class="term"><span class="arb">تَلَقِّي</span><span class="lat">Talaqqi</span></div>
+    <div>
+      <h3>Receive it from a reciter</h3>
+      <p>Choose from nine recitations — classical voices like Husary's Mu'allim teaching recording, or contemporary ones like Maher al-Muaiqly — and let the correct sound become the memory itself.</p>
     </div>
+  </div>
+  <div class="step" data-unveil>
+    <div class="term"><span class="arb">تَكْرَار</span><span class="lat">Takrar</span></div>
+    <div>
+      <h3>Repeat each ayah until it holds</h3>
+      <p>The loop engine plays one ayah three, five, seven or ten times before moving to the next — then cycles the whole passage again. The old counting method, counted for you.</p>
+    </div>
+  </div>
+  <div class="step" data-unveil>
+    <div class="term"><span class="arb">حِفْظ</span><span class="lat">Hifz</span></div>
+    <div>
+      <h3>Veil the page and recite</h3>
+      <p>One tap blurs the ink while the page stays in front of you. Stuck on a single ayah? Tap it to peek — the way a teacher lets you glance at one word, never the whole page.</p>
+    </div>
+  </div>
+</div>
+```
+
   </div>
 </section>
 
 <!-- ================= THE LOOP ================= -->
+
 <section class="land-sec loop-band">
   <div class="inner" data-unveil>
     <span class="eyebrow">The loop</span>
@@ -371,6 +383,7 @@
 </section>
 
 <!-- ================= DETAILS ================= -->
+
 <section class="land-sec details">
   <div class="inner">
     <div class="sec-head" data-unveil>
@@ -399,6 +412,7 @@
 </section>
 
 <!-- ================= THE TOOL ================= -->
+
 <section class="tool-sec" id="tool">
   <div class="tool-head" data-unveil>
     <div class="arb">حِفْظ</div>
@@ -461,34 +475,37 @@
       </div>
     </div>
 
-    <div class="err" id="err"></div>
+```
+<div class="err" id="err"></div>
 
-    <div class="page" id="page" aria-label="Quran passage">
-      <div class="page-head" id="pageHead"></div>
-      <div class="verses" id="verses"></div>
-      <div class="veil-hint">Recite from memory — tap a verse to peek, tap again to veil it.</div>
-    </div>
+<div class="page" id="page" aria-label="Quran passage">
+  <div class="page-head" id="pageHead"></div>
+  <div class="verses" id="verses"></div>
+  <div class="veil-hint">Recite from memory — tap a verse to peek, tap again to veil it.</div>
+</div>
 
-    <div class="player" id="player" aria-label="Audio player">
-      <div class="player-row">
-        <button class="btn btn-gold" id="playBtn" style="min-width:92px;padding:11px 18px">▶ Play</button>
-        <button class="btn btn-ghost" id="hideBtn" style="padding:11px 18px">Hide</button>
-        <div class="now" id="now">Ready</div>
-      </div>
-      <div class="player-row" style="margin-top:10px">
-        <div class="mini-field">
-          <label for="reps">Mode</label>
-          <select id="reps">
-            <option value="1">Read through — no repeat</option>
-            <option value="3" selected>Repeat each ayah 3×</option>
-            <option value="5">Repeat each ayah 5×</option>
-            <option value="7">Repeat each ayah 7×</option>
-            <option value="10">Repeat each ayah 10×</option>
-          </select>
-        </div>
-        <label class="toggle"><input type="checkbox" id="loop" checked> Loop the passage</label>
-      </div>
+<div class="player" id="player" aria-label="Audio player">
+  <div class="player-row">
+    <button class="btn btn-gold" id="playBtn" style="min-width:92px;padding:11px 18px">▶ Play</button>
+    <button class="btn btn-ghost" id="hideBtn" style="padding:11px 18px">Hide</button>
+    <div class="now" id="now">Ready</div>
+  </div>
+  <div class="player-row" style="margin-top:10px">
+    <div class="mini-field">
+      <label for="reps">Mode</label>
+      <select id="reps">
+        <option value="1">Read through — no repeat</option>
+        <option value="3" selected>Repeat each ayah 3×</option>
+        <option value="5">Repeat each ayah 5×</option>
+        <option value="7">Repeat each ayah 7×</option>
+        <option value="10">Repeat each ayah 10×</option>
+      </select>
     </div>
+    <label class="toggle"><input type="checkbox" id="loop" checked> Loop the passage</label>
+  </div>
+</div>
+```
+
   </div>
 </section>
 
@@ -500,7 +517,9 @@
 <audio id="audio" preload="auto"></audio>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
 <script>
 /* ===================== LANDING MOTION ===================== */
 (function(){
@@ -622,7 +641,10 @@
     const d = await fetch(`${API}/recitations/${ref}/by_chapter/${chapterNum}?per_page=300`).then(r => r.json());
     (d.audio_files || []).forEach(f => {
       if(!f.url) return;
-      map[f.verse_key] = f.url.startsWith("http") ? f.url : QDC_AUDIO_BASE + f.url.replace(/^\/+/, "");
+      let u = f.url;
+      if(u.startsWith("//")) u = "https:" + u;               // protocol-relative (Husary mirrors)
+      else if(!u.startsWith("http")) u = QDC_AUDIO_BASE + u.replace(/^\/+/, "");
+      map[f.verse_key] = u;
     });
     return map;
   }
@@ -791,5 +813,6 @@
   repsSel.addEventListener("change", () => { repsDone = 0; if(playing) updateNow(); });
 })();
 </script>
+
 </body>
 </html>
