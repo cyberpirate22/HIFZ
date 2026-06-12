@@ -1,6 +1,4 @@
- <div align="center">
 
-<img src="assets/banner.png" alt="Hifz Repeater — حِفْظ" width="100%">
 
 # Hifz Repeater
 
