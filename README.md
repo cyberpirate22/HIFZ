@@ -105,7 +105,6 @@ Memorisation happens before Fajr, on commutes, between things — so the whole e
 
 **Translations:** Saheeh International · M.A.S. Abdel Haleem · Al-Hilali & Khan · T. Usmani — shown beneath each ayah and veiled with it, so the English can't quietly do your recall for you.
 
-> **Why no Idris Abkar or Abdul Rashid Sufi?** No free source offers their recitations as verse-by-verse audio — only full-surah files, which the per-ayah repeat engine cannot drill. If a per-ayah source appears, adding them is a one-line change (see below).
 
 <br>
 
